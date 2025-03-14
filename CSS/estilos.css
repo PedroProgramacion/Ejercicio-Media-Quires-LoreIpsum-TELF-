@@ -1,0 +1,120 @@
+/* Reset básico */
+* {
+  margin: 0; /* Elimina los márgenes predeterminados de todos los elementos */
+  padding: 0; /* Elimina los rellenos predeterminados de todos los elementos */
+  box-sizing: border-box; /* Hace que el padding y el borde se incluyan en el ancho y alto de los elementos */
+}
+
+/* Estilos generales */
+.page {
+  font-family: Arial, sans-serif; /* Define la fuente predeterminada */
+  background-color: #f0f0f0; /* Color de fondo de la página */
+}
+
+/* Header y Footer */
+header, footer {
+  padding: 20px; /* Espaciado interno */
+  background-color: #3498db; /* Color de fondo azul */
+  color: white; /* Color del texto */
+  text-align: center; /* Alinea el texto al centro */
+}
+
+footer {
+  padding: 20px;
+  background-color: #3498db;
+  color: white;
+  text-align: center;
+  margin-top: 0px; /* Separa el footer */
+  position: relative; /* Mantén el footer en su lugar */
+}
+
+/* Contenedor principal */
+.container {
+  display: flex; /* Hace que el contenedor sea un contenedor flexbox */
+  background-color: white; /* Color de fondo del contenedor */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave alrededor del contenedor */
+  justify-content: center; /* Centra los elementos horizontalmente */
+  align-items: flex-start; /* Alinea los elementos en la parte superior */
+  flex-grow: 1; /* Permite que el contenedor crezca y empuje el footer hacia abajo */
+  min-height: 770px; /* Aumenta el tamaño del contenedor */
+}
+
+
+/* Navegación, contenido y barra lateral */
+nav, main, aside {
+  padding: 20px; /* Espaciado interno */
+  justify-self: left; /* Alinea los elementos a la izquierda (no aplica en flexbox) */
+  align-items: left; /* Alinea los elementos a la izquierda (no aplica en flexbox) */
+  flex-wrap: wrap; /* Permite que los elementos se envuelvan en varias líneas */
+  flex-direction: column; /* Alinea los elementos en una columna (no aplica aquí) */
+  align-items: start; /* Alinea los elementos al inicio (no aplica aquí) */
+  justify-content: center; /* Centra los elementos verticalmente (no aplica aquí) */
+}
+
+/* Navegación (nav) */
+nav {
+  background-color: #2ecc71; /* Color de fondo verde */
+  padding: 10px; /* Espaciado interno reducido */
+  flex-basis: 100px; /* Ancho base del nav */
+  flex-shrink: 0; /* Evita que el nav se encoja */
+  height: 155px; /* Altura fija del nav */
+}
+
+/* Contenido principal (main) */
+main {
+  background-color: #ecf0f1; /* Color de fondo gris claro */
+  flex-grow: 2; /* Ocupa el espacio restante */
+  height: 770px; /* Altura fija del main */
+}
+
+/* Barra lateral (aside) */
+aside {
+  background-color: #e74c3c; /* Color de fondo rojo */
+  display: flex; /* Hace que el aside sea un contenedor flexbox */
+  justify-content: right; /* Alinea el contenido a la derecha */
+  align-items: flex-start; /* Alinea el contenido en la parte superior */
+  flex-grow: 1; /* Ensancha el aside */
+  flex-basis: 200px; /* Ancho base del aside */
+  flex-shrink: 0; /* Evita que el aside se encoja */
+  height: 185px; /* Altura fija del aside */
+}
+
+
+/*media query*/
+/* Estilos para pantallas pequeñas */
+@media (max-width: 750px) {
+  .container {
+    order: 3; /* Cambia el orden del contenedor */
+    flex-direction: column; /* Alinea los elementos en una columna */
+    min-height: 100vh; /* Ajusta la altura del contenedor */
+    align-items: flex-start; /* Alinea los elementos en la parte superior */
+    flex-grow: 1; /* Permite que el contenedor crezca y empuje el footer hacia abajo */
+  }
+
+  nav {
+    order: 1; /* Coloca el nav (verde) en la parte superior */
+    flex-basis: 100px; /* Ancho base del nav */
+    height: 150px; /* Altura fija del nav */
+    width: 100%;
+  }
+
+  aside {
+    order: 2; /* Coloca el aside (rojo) en el medio */
+    flex-basis: 100px; /* Ancho base del aside */
+    height: 200px; /* Altura fija del aside */
+    width: 100%;
+  }
+
+  main {
+    order: 3; /* Coloca el main (gris) en la parte inferior */
+    height: auto; /* Altura automática del main */
+    width: 100%;
+  }
+
+  footer{
+    order: 4; /* Coloca el footer en la parte inferior */
+    width: 100%;
+    margin-top: 0px; /* Separa el footer */
+    position: relative; /* Mantén el footer en su lugar */
+  }
+}
